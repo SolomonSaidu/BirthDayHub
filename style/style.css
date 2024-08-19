@@ -79,7 +79,15 @@ p{
     top: 0px;
     background: linear-gradient(180deg, rgba(233, 233, 233, 0.907), rgb(239, 239, 239));
     width: 100vw;
-    
+    z-index: 1;
+}
+
+.header > .bd-logo{
+    margin-left:.5em ;
+}
+
+.header > .bd-logo > img{
+    height: 1.8em;
 }
 
 .header > h1:nth-child(1){
@@ -94,10 +102,6 @@ p{
 }
 
 .header > .menu:active{
-    margin-right: .5em;
-    height: 2.5em;
-    padding: .2em;
-    display: flex;
     background-color: var(--bdgray);
 }
 
@@ -262,10 +266,10 @@ p{
     display: grid;
     gap: .8em;
     padding: 3em;
-    padding-top: 3.5em;
-    padding-bottom: 2.5em;
+    padding-top: 4em;
+    padding-bottom: 4em;
     border: 1px solid rgb(219, 219, 219);
-    border-radius: 10px;
+    border-radius: 20px;
     margin-top: 2em;
 }
 
@@ -343,9 +347,13 @@ p{
     top: 50px;
 }
 
+.login-bg > .form-div > form > .bd-logo > img{
+    height: 3.5em;
+}
+
 .login-bg > .form-div > form > span{
     /* margin-bottom: 1em; */
-    font-size:1.5rem;
+    font-size:1rem;
 }
 
 
@@ -388,7 +396,7 @@ p{
 
 .login-bg > .form-div > form > .Google-btn{
     margin-top: 2em;
-    padding: var(--btnpadding);
+    padding: .5em;
     /* border: 2px solid purple; */
     border-radius: 10px;
     /* background: linear-gradient(30deg, rgba(128, 0, 128, 0.057), rgba(0, 0, 255, 0.076), rgba(255, 0, 43, 0.076)); */
@@ -473,13 +481,17 @@ p{
 
 .sing-up-bg > .form-div > form > span{
     /* margin-bottom: 1em; */
-    font-size:1.5rem;
+    font-size:1rem;
 }
 
 .sing-up-bg > .form-div > form{
     display: grid;
     gap: 1em;
     margin-top: 2em;
+}
+
+.sing-up-bg > .form-div > form > .bd-logo > img{
+    height: 3.5em;
 }
 
 .sing-up-bg > .form-div > form > input{
@@ -522,7 +534,7 @@ p{
 
 .sing-up-bg > .form-div > form > .Google-btn{
     margin-top: 2em;
-    padding: var(--btnpadding);
+    padding: .5em;
     /* border: 2px solid purple; */
     border-radius: 10px;
     /* background: linear-gradient(30deg, rgba(128, 0, 128, 0.057), rgba(0, 0, 255, 0.076), rgba(255, 0, 43, 0.076)); */
@@ -869,12 +881,19 @@ p{
         margin-top: 0em;
         padding: 1em;
         display: flex;
-        gap: 0px;
+        gap: 0em;
+        justify-content: center;
+    }
+
+    .base-3 > .flex > .img {
+        width: 200em;
+        padding: 0px;
     }
 
     .base-3 > .flex > .img > img{
-        width: 80%;
+        width: 18em;
         padding: 0px;
+        margin: 0px;
     }
 
 .base-3 > .flex > .img{
@@ -885,6 +904,8 @@ p{
 
     .base-3 > .flex > .para {
         text-align: left;
+        /* background: navy; */
+        padding: 2em;
         /* padding: .8em; */
     }
 
