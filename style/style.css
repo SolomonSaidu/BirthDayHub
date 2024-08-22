@@ -19,6 +19,8 @@ html, body{
     --btnpadding:13px;
     --bdfont-size:.8em;
     --bg-color:radial-gradient(white, rgb(233, 233, 233));
+    --btn-active-b-color: rgb(30, 30, 30);
+    --btn-active-g-color: rgb(149, 149, 149);
 }
 
 
@@ -40,33 +42,67 @@ p{
     font-size:1.2em;
 }
 
+button{
+    font-weight: bold;
+}
+
 .high-class{
     font-size: 1.5rem;
     margin: 0px;
     padding: 0px;
 }
 
+
 /* Navbar --This is invisible at the momoent coz it's a navbar ;) */
 .navbar{
     display: grid;
     position:fixed;
     right: 0px;
-    background: var(--bdblack);
+    background: none;/*change the color to understand what i did*/
     color: white;
-    width: 70vw;
     height: 100vh;
     justify-content: center;
-    display: none;
+    /* display: none; */
+    z-index: 2;
+    bottom: 94%;
+    transition: 1.5s;
+    width: 50px;
+    border-bottom-left-radius: 20px;
+}
+
+.navbar:hover{/* this is used to animate the visibility of the nav-bar to the screen*/
+    bottom: 0;
+    background: var(--bdblack);
+    width: 70vw;
+    border-bottom-left-radius: 0px;
 }
 
 .navbar > .nav{
     margin-top: 6em;
     text-align: center;
     list-style: none;
+    display: grid;
+    height: 30%;
+    gap: 2px;
 }
 
-.navbar > .nav >li{
+.navbar > .nav > li > a{
+    font-weight: lighter;
     padding: .2em;
+    text-decoration: none;
+    font-style: normal;
+    color: white;
+    transition: 2s;
+    /* background: blue; */
+}
+
+.navbar > .nav > li > a:hover{
+    border-bottom: 1px solid white;
+    transition: 2s;
+}
+
+.navbar > .nav > li:nth-child(5){
+    font-size: 12px;
 }
 
 /* Header style */
@@ -84,6 +120,10 @@ p{
 
 .header > .bd-logo{
     margin-left:.5em ;
+    display: flex;
+    align-items: center;
+    font-style: italic;
+    font-size: 18px;
 }
 
 .header > .bd-logo > img{
@@ -152,7 +192,7 @@ p{
 }
 
 .base-1 > .btn > a:nth-child(2) > button:active{
-    background-color: rgba(90, 90, 90, 0.264);
+    background-color: rgb(30, 30, 30);
     cursor: pointer;
 }
 
@@ -395,20 +435,27 @@ p{
 }
 
 .login-bg > .form-div > form > .Google-btn{
+    animation-name: googlBtnAni;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
     margin-top: 2em;
     padding: .5em;
-    /* border: 2px solid purple; */
     border-radius: 10px;
-    /* background: linear-gradient(30deg, rgba(128, 0, 128, 0.057), rgba(0, 0, 255, 0.076), rgba(255, 0, 43, 0.076)); */
     font-size: 1.2em;
     font-weight: 50;
-    color: rgb(141, 141, 141) ;
-    border: 2px solid rgb(230, 0, 50);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1em;
     cursor: pointer;
+    background: linear-gradient(60deg,rgb(53, 131, 255) -20%, rgb(255, 63, 63) , rgb(255, 225, 29), rgb(43, 255, 43) );
+    background-size: 200% auto;
+    transition: 1s;
+}
+
+.login-bg > .form-div > form > .Google-btn:hover{
+    background-position: right center;
 }
 
 .login-bg > .form-div > form > .Google-btn > .img{
@@ -419,41 +466,27 @@ p{
     font-weight: lighter;
 }
 
-.login-bg > .form-div > form > a > .back-btn{
+.login-bg > .form-div > form > a > .lost-pass{
     padding: var(--btnpadding);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5em;
     text-align: center;
-    font-weight: bold;
-    color: var(--bdblack);
+    font-weight: lighter;
+    font-size: small;
 }
 
-.login-bg > .form-div > form > a > .back-btn:active{
+.login-bg > .form-div > form > a > .lost-pass:active{
     padding: var(--btnpadding);
     background: var(--bdgray);
     border-radius: 10px;
-    color: var(--bdblack);
 }
 
 .login-bg > .form-div > form > a {
-    text-decoration: none;
     font-style: none;
 }
 
-.login-bg > .form-div > form > a > .back-btn > .img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
-
-.login-bg > .form-div > form > a > .back-btn > .img > img{
-    height: 1.5em;
-    padding: 0px;
-    margin: 0px;
-}
 
 
 /* SIGN-UP --for sign-up.html*/
@@ -533,98 +566,190 @@ p{
 }
 
 .sing-up-bg > .form-div > form > .Google-btn{
+    animation-name: googlBtnAni;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
     margin-top: 2em;
     padding: .5em;
-    /* border: 2px solid purple; */
     border-radius: 10px;
-    /* background: linear-gradient(30deg, rgba(128, 0, 128, 0.057), rgba(0, 0, 255, 0.076), rgba(255, 0, 43, 0.076)); */
     font-size: 1.2em;
     font-weight: 50;
-    color: rgb(141, 141, 141) ;
-    border: 2px solid rgb(230, 0, 50);
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 1em;
     cursor: pointer;
+    background: linear-gradient(60deg,rgb(53, 131, 255) -20%, rgb(255, 63, 63) , rgb(255, 225, 29), rgb(43, 255, 43) );
+    background-size: 200% auto;
+    transition: 1s;
 }
+
+.sing-up-bg > .form-div > form > .Google-btn:hover{
+    background-position: right center;
+}
+
 
 .sing-up-bg > .form-div > form > .Google-btn > .img{
     height: 1.8em;
 }
 
-.sing-up-bg > .form-div > form > a > .back-btn{
+.sing-up-bg > .form-div > form > a > .log-insted{
     padding: var(--btnpadding);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: .5em;
     text-align: center;
-    font-weight: bold;
-    color: var(--bdblack);
+    font-weight: lighter;
+    font-size: small;
 }
 
-.sing-up-bg > .form-div > form > a > .back-btn:active{
+.sing-up-bg > .form-div > form > a > .log-insted:active{
     padding: var(--btnpadding);
     background: var(--bdgray);
     border-radius: 10px;
-    color: var(--bdblack);
 }
 
 .sing-up-bg > .form-div > form > a {
-    text-decoration: none;
+    /* text-decoration: none; */
     font-style: none;
 }
 
-.sing-up-bg > .form-div > form > a > .back-btn > .img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
-}
 
 
-.sing-up-bg > .form-div > form > a > .back-btn > .img > img{
-    height: 1.5em;
-    padding: 0px;
-    margin: 0px;
-}
 
 
 /* USER  --this is the styles for the user page */
 .search-popup{
     position: absolute;
-    bottom: 20%;
+    /* bottom: 20%; */
     background: rgba(128, 128, 128, 0.349);
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .search-popup > form{
-    padding: 5em;
-    height: 20%;
-    width: 50%;
+    padding: 2em;
+    height: 50%;
+    width: 80%;
     background: var(--bg-color);
     border-radius: 20px;
-    display: flex;
+    position: absolute;
+    top: 20%;
+    display: grid;
     justify-content: center;
+    overflow-y: scroll;
 }
 
-.search-popup > form > .input{
+.search-popup > form >p{
+    text-align: center;
+    margin-bottom: .5em;
+    font-size: xx-large;
+}
+
+.search-popup > form > div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: var(--bdgray);
+    padding: .2em;
+    border-radius: 10px;
+}
+
+.search-popup > form > div > .input{
     padding: var(--btnpadding);
     border: none;
-    background-color: var(--bdgray);
+    background: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     height: 20px;
+    width: 100%;
 }
 
-.search-popup > form > .button{
-    padding: var(--btnpadding);
-    height: 45px;
+/* .search-popup > form > div > .input:{
+    border: 2px solid blue;
+} */
+
+.search-popup > form > div > .button{
+    padding: .2em;
+    margin: .2em;
+    height: 40px;
+    width: 8em;
+    border: none;
+    background: var(--bdblack);
+    color: white;
+    border-radius: 10px;
+}
+
+.search-popup > form  > .search-bd-list{
+    background: var(--bdgray);
+    margin-top: .5em;
+    border-radius: 20px;
+    height: 8em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.search-popup > form  > .search-bd-list > .title{
+    padding: 1em;
+}
+
+.search-popup > form  > .search-bd-list > .avater{
+    margin-left: 1em;
+    padding: 1em;
+    background: rgb(255, 75, 105);
+    color: white;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-popup > form  > .search-bd-list > .title{
+    text-align: justify;
+}
+
+.search-popup > form  > .search-bd-list > .title > p:nth-child(1){
+    margin-bottom: .3em;
+}
+
+.search-popup > form  > .search-bd-list > .title > p:nth-child(2){
+    font-size: smaller;
+    margin-bottom: .5em;
+    color: rgb(147, 147, 147);
+}
+
+
+.search-popup > form  > .search-bd-list > .title > .manual{
+    font-size: x-small;
+    padding: .3em;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid rgb(0, 107, 107);
+    background: rgba(42, 220, 255, 0.522);
+    color: rgb(0, 107, 107);
+    border-radius: 50px;
+}
+
+.search-popup > form  > .search-bd-list > .title > .form{/*This is the span, used for indication*/
+    font-size: x-small;
+    padding: .3em;
+    margin-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    border: 1px solid rgb(107, 0, 89);
+    background: rgba(255, 42, 209, 0.522);
+    color: rgb(107, 0, 84);
+    border-radius: 50px;
 }
 
 .top{
@@ -668,19 +793,23 @@ p{
 .top > .menu{/*This is where the two buttons are with the search png/img / the two buttons are located here with the search png/img*/
     margin: 1em;
     display: flex;
-    justify-content: space-between;
     height: fit-content;
+    background: var(--bdgray);
+    border-radius: 20px;
+    display: flex;
+    align-self: center;
 }
 
 .top > .menu > .btn{
-    background: var(--bdgray);
-    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
     /* width: fit-content; */
     /* margin: 1em; */
 }
 
 
-.top > .menu > .btn > button:nth-child(1){
+.top > .menu > .btn > a > button{
     padding: var(--btnpadding);
     margin: 1px;
     border: none;
@@ -691,25 +820,30 @@ p{
     cursor: pointer;
 }
 
-.top > .menu > .btn > button:nth-child(2){
-    padding: var(--btnpadding);
-    margin: 1px;
-    border: none;
-    background: none;
-    color: var(--bdblack);
-    width: 8em;
-    border-radius: 20px;
-    cursor: pointer;
-}
 
-.top > .menu > .img{
+
+.top > .menu > .btn > .row{
     padding: .3em;
     display: flex;
+    justify-content: right;
     height: 2em;
+    width: 50%;
+    padding-right: .5em;
 }
 
-.top > .menu > .img > img{
-    height: 2em;
+
+.top > .menu > .btn > .row > input{
+    background: none;
+    border: none;
+    padding-left: .2em;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.search-img{
+    /* height: 1.5em; */
+    padding-left: .8em;
+    padding-right: .8em;
 }
 
 .user-container{
@@ -824,9 +958,115 @@ p{
     /* width: 5em; */
 }
 
-/* This is for bigger screen like laptop */
+.welcome > .btn > button > a{
+    text-decoration: none;
+    /* font-style: normal; */
+    color: white;
+}
+
+/* ADD-BIRTHDAY-MANUAL PAGE STYLE */
+.manual-form{
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.manual-form > div > form{
+    display: grid;
+    gap: .5em;
+    padding: 4em;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+    text-align: center;
+}
+
+.manual-form > div > form > .discription{
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+.manual-form > div > form > .manual-icon{
+    height: 4em;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-form > div > form > input{/* This the manual general input style */
+    padding: var(--btnpadding);
+    border: none;
+    background: var(--bdgray);
+    margin-top: .5em;
+    border-radius: 10px;
+}
+
+.manual-form > div > form > textarea{
+    padding: var(--btnpadding);
+    border: none;
+    background: var(--bdgray);
+    margin-top: .5em;
+    border-radius: 10px;
+}
+
+.manual-form > div > form > .submit{
+    padding: var(--btnpadding);
+    border: none;
+    border-radius: 10px;
+    background: var(--bdblack);
+    color: white;
+}
+
+.manual-form > div > form > .submit:active{
+    background: var(--btn-active-b-color);
+}
+
+.manual-form > div > form > .shear{
+    padding: var(--btnpadding);
+    border: none;
+    border-radius: 10px;
+    background: var(--bdgray);
+    color: var(--bdblack);
+    margin-top: .2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .2em;
+}
+
+.manual-form > div > form > .shear:active{
+    background: var(--btn-active-g-color);
+}
+
+.manual-form > div > form > .shear > img{
+    height: 1.5em;
+}
+
+.manual-form > div > form > a{
+    text-align: center;
+    padding: var(--btnpadding);
+}
+
+
+
+
+/* This is for bigger screen like laptop  */
+/* NOTE: NOTHING SHOULD BE AT THE BOTTOM!! */
 
 @media (min-width:1024px) {
+
+    
+    .navbar{
+        width: 60px;
+    }
+    
+    .navbar:hover{
+        bottom: 0;
+        background: var(--bdblack);
+        width: 20vw;
+        border-bottom-left-radius: 0px;
+    }
+
     body, html{
         font-size: 1rem;
     }
@@ -905,7 +1145,7 @@ p{
     .base-3 > .flex > .para {
         text-align: left;
         /* background: navy; */
-        padding: 2em;
+        padding-left: 1em;
         /* padding: .8em; */
     }
 
@@ -932,6 +1172,10 @@ p{
     .top > .title > .text{/*This is to give the intro "List of added bd's" a width so it could be centers in the page*/
         width: 55%;
         text-align: right;
+    }
+
+    .search-popup > form{
+        width: 50%;
     }
 }
 

@@ -5,23 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <style>
-        body{
+        body, html{
             overflow:hidden;
         }
     </style>
     <title>user account</title>
 </head>
 <body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <ul class="nav">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Support</a></li>
+            <li>
+                <a href="/web/login.html">Login</a> |
+                <a href="/web/sign-up.html">Sign-up</a>
+            </li>
+        </ul>
+     </div>
+    <!-- Pop-up search box/screen  -->
     <div class="search-popup">
+        <!-- The Form -->
         <form action="">
-            <input class="input" type="text">
-            <input class="button" type="button" value="search">
+            <!-- Title -->
+            <p>Search for name of added friends.</p>
+            <!-- Input div -->
+            <div>
+                <input class="input" type="text">
+                <input class="button" type="button" value="search">
+            </div>
+
+            <div class="search-bd-list">
+                <div class="avater">
+                    <h1>BD</h1>
+                </div>
+                <div class="title">
+                    <p>Name of user</p>
+                    <p>Date:2/08/2024</p>
+                    <span class="manual">
+                        Manual
+                    </span>
+                </div>
+        </div>
+
+        <div class="search-bd-list">
+            <div class="avater">
+                <h1>BD</h1>
+            </div>
+            <div class="title">
+                <p>Name of user</p>
+                <p>Date:2/08/2024</p>
+                <span class="manual">
+                    Manual
+                </span>
+            </div>
+    </div>
+
+    <div class="search-bd-list">
+        <div class="avater">
+            <h1>BD</h1>
+        </div>
+        <div class="title">
+            <p>Name of user</p>
+            <p>Date:2/08/2024</p>
+            <span class="manual">
+                Manual
+            </span>
+        </div>
+</div>
+
+<div class="search-bd-list">
+    <div class="avater">
+        <h1>BD</h1>
+    </div>
+    <div class="title">
+        <p>Name of user</p>
+        <p>Date:2/08/2024</p>
+        <span class="manual">
+            Manual
+        </span>
+    </div>
+</div>
         </form>
     </div>
+
     <!-- Header -->
     <div class="header">
         <div class="bd-logo">
-            <img src="../asset/bd-hub  logo.png" alt="">
+            <img src="../asset/bdhub-icon-b.png" alt=""><p>hub</p>
         </div>
         <div class="menu">
             <img src="../asset/menu-icon.svg" alt="menu" srcset="">
@@ -32,23 +105,26 @@
     <div class="top">
         <div class="title">
             <div class="text">
-                <h2>List of added BD's</h2>
+                <h3>List of added Events</h3>
             </div>
             <div class="user">
-                <p>User name</p>
                 <img src="" alt="" class="user-img">
+                <p>User name <br> <a href="#">Log-out</a> </p>
             </div>
         </div>
     <!-- Menu  --which contains the two buttons and a png search icon/img -->
         <div class="menu">
             <div class="btn">
-                <button>Add BD</button>
-                <button>Send form</button>
+                <a href="add-birthday-manual.html">
+                    <button>Add BD</button>
+                </a>
+                
+                <div class="row">
+                    <input placeholder="search..." type="text">
+                    <img class="search-img" src="../asset/search.png" alt="search">
+                </div>
             </div>
             
-            <div class="img">
-                <img src="../asset/search.png" alt="search">
-            </div>
         </div>
     </div>
 
